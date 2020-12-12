@@ -6,30 +6,27 @@ public class Alerts {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		System.setProperty("webdriver.chrome.driver", "//Users//komallakhe//Desktop//Automation//chromedriver");
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-		
-		String text="Komal";
-		
+
+		String text = "Komal";
+
 		driver.findElement(By.cssSelector("input#name")).sendKeys(text);
-		
+
 		driver.findElement(By.cssSelector("[id='alertbtn']")).click();
-		
+
 		System.out.println(driver.switchTo().alert().getText());
 
 		driver.switchTo().alert().accept();
 
-		
 		driver.findElement(By.id("confirmbtn")).click();
 
 		System.out.println(driver.switchTo().alert().getText());
 
 		driver.switchTo().alert().dismiss();
-
-		
 
 	}
 
